@@ -4,7 +4,7 @@ import ast
 from typing import Dict, Any, List, Optional
 
 class CodeParser:
-    def __init__(self, code: str, language: str = "python"):
+    def __init__(self, code: str, language: str = "c++"):
         self.code = code
         self.language = language
         

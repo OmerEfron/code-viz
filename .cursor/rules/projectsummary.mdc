@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+---
+Rule: Project Summary – CodeViz
+
+This project has a frontend built with React for inputting code snippets, tutorials, and interactive 2D visualizations. The backend is built with Python FastAPI, which processes user code, detects errors, and interfaces with an LLM (like GPT) for debugging insights and step-by-step explanations. The visualization engine uses HTML5 Canvas/WebGL to render data structures and execution flows in real-time. All components are integrated with user experience and education in mind.
