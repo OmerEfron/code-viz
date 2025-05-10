@@ -3,7 +3,7 @@ from typing import List, Dict, Any, Optional
 
 class CodeInput(BaseModel):
     code: str
-    language: str = "python"
+    language: str = "c++"
 
 class VisualizationStep(BaseModel):
     step_number: int

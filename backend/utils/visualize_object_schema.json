@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "visualization": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step_number": {
+                  "type": "integer"
+                },
+                "line_number": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "state": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": ["string", "number", "boolean", "array", "object"]
+                  }
+                },
+                "operation": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "step_number",
+                "line_number",
+                "description",
+                "state",
+                "operation"
+              ]
+            }
+          },
+          "total_steps": {
+            "type": "integer"
+          },
+          "final_result": {
+            "type": "object",
+            "properties": {
+              "steps_needed": {
+                "type": "integer"
+              },
+              "final_state": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": ["string", "number", "boolean", "array", "object"]
+                }
+              }
+            },
+            "required": [
+              "steps_needed",
+              "final_state"
+            ]
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "line": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "line",
+                "message"
+              ]
+            }
+          }
+        },
+        "required": [
+          "steps",
+          "total_steps",
+          "final_result",
+          "issues"
+        ]
+      }
+    },
+    "required": [
+      "visualization"
+    ]
+  }

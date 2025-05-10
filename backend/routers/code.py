@@ -35,3 +35,14 @@ async def debug_code(
     debug_service = DebugService()
     result = debug_service.debug_code(debug_input)
     return result
+
+@router.post("/parse", response_model=bool)
+async def parse_code(
+    code_input: CodeInput,
+    db: Session = Depends(get_db)
+):
+    """
+    Parse code and return True if valid, False otherwise
+    """
+    parser = CodeParser(code_input.code, code_input.language)
+    return parser.extract_variables()

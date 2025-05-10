@@ -24,3 +24,4 @@ class VisualizationService:
             steps=steps,
             total_steps=len(steps)
         )
+    
